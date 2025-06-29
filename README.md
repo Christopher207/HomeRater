@@ -1,13 +1,15 @@
-# Laurel
+# Home Rater
 
-A landing page template.
-
-* [Getting started](#getting-started)
+This web app is meant to help find the best location for a house or appartment, as well as find the right price to sell your own.
 
 ## Getting started
-* First, ensure that node.js & npm are both installed. If not, choose your OS and installation method from [this page](https://nodejs.org/en/download/package-manager/) and follow the instructions.
-* This template requires Node 14 to work. You can handle multiple node versions with [NVM](https://github.com/nvm-sh/nvm) 
-* Next, use your command line to enter your project directory.
-* This template comes with a ready-to-use package file called `package-sample.json`. You just need to rename it to `package.json`, then run `npm install` to install all of the dependencies into your project.
+* First install the libraries required. They will be listed on the terminal as you execute flask-app.py.
+* The Random Forest model is required for the prediction, unfortunately it is heavier than what github expectes, so contact the authors in order to get it.
 
-You're ready to go! Run any task by typing `npm run task` (where "task" is the name of the task in the `"scripts"` object). The most useful task for rapid development is `watch`. It will start a new server, open up a browser and watch for any SCSS or JS changes in the `src` directory; once it compiles those changes, the browser will automatically inject the changed file(s)!
+## Usage
+* Choose wether to find a home or rate yours.
+* Zoom in the map and click on pins to add them to the comparing list.
+* Compare the alternatives, add more to compare or delete from the list.
+* You may also locate your own home and find the ideal price for it based on our AI model.
+
+You're ready to go! Start using Home Rater now.
