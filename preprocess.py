@@ -5,7 +5,7 @@ def preprocess_txt_to_json(input_file, output_file):
 
     with open(input_file, 'r', encoding='utf-8') as f:
         for line in f:
-            parts = line.strip().split('|')
+            parts = line.strip().split('^')
             #print(parts[6])
             if len(parts) < 9:
                 continue
@@ -26,4 +26,4 @@ def preprocess_txt_to_json(input_file, output_file):
         json.dump(properties, f, ensure_ascii=False)
 
 if __name__ == '__main__':
-    preprocess_txt_to_json('depaAlqUrbaniaConsolidado.txt', 'static/data/properties.json')
+    preprocess_txt_to_json('propiedadesClean.txt', 'static/data/properties.json')
