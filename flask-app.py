@@ -443,16 +443,16 @@ def predict_price():
 
         # Vamos a recalcular 'kmeans_cluster_avg_price' para que sea un precio total estimado
         # basado en el precio promedio por m2 del cluster y el área_m2 de la propiedad actual.
-        kmeans_cluster_avg_price = avg_price_per_m2_of_cluster * area_m2
-
+        #kmeans_cluster_avg_price = avg_price_per_m2_of_cluster * area_m2
+        kmeans_cluster_avg_price = avg_price_per_m2_of_cluster
         print(f"Cluster K-Means asignado: {cluster_id}, Precio promedio por m2 del cluster: {avg_price_per_m2_of_cluster}, Característica 'kmeans_cluster_avg_price' calculada: {kmeans_cluster_avg_price}")
 
 
         # 4. Preparar todas las características para el modelo (AHORA SON 9)
         # Asegúrate de que el orden de las características sea el mismo que el modelo espera.
         # El orden debe ser: [latitud, longitud, area_m2, vgg_feat1, ..., vgg_feat5, kmeans_cluster_avg_price]
-        features_for_model = np.array([[latitud, longitud, area_m2] + vgg_features + [kmeans_cluster_avg_price]])
-
+        features_for_model = np.array([[area_m2, latitud, longitud, ] + [kmeans_cluster_avg_price] + vgg_features])
+        print("características enviadas:",features_for_model)
         # 5. Realizar la predicción
         predicted_price = home_rater_model.predict(features_for_model)[0]
 
